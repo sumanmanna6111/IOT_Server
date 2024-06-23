@@ -1,11 +1,10 @@
 package com.suman.iotserver;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
-import android.content.pm.ServiceInfo;
-import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -35,6 +34,7 @@ public class MainService extends Service {
         return null;
     }
 
+    @SuppressLint("ForegroundServiceType")
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
